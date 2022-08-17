@@ -4,7 +4,7 @@ function Contact() {
     return (
         <div className='container min-vh-100'>
             <h1>Contact Us</h1>
-            <form id="contact-form" method="" role="form" >
+            <form id="contact-form" method="">
 
                 <div className="messages"></div>
                 <div className="controls">
