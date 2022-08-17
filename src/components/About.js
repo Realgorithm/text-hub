@@ -1,4 +1,7 @@
 import React from "react";
+import code from "../asset/image/code.png";
+import preview from "../asset/image/preview.png";
+import usedlang from "../asset/image/usedlang.png";
 
 function About(props) {
   let styles = {
@@ -10,10 +13,18 @@ function About(props) {
       backgroundColor: props.mode === "dark" ? "black" : "white",
       color: props.mode === "light" ? "#042741" : "white",
     },
+    slideText:{
+      color: "#FFFFFF",
+    },
+    slideBtn:{
+      color: "red",
+      backgroundColor:"brown"
+    },
   };
   return (
-    <div className="container my-3" style={styles.container}>
+    <div className="container mb-5" style={styles.container}>
       <h1>About Us</h1>
+      {/* accordion starts here  */}
       <div className="accordion" id="accordionExample">
         <div className="accordion-item">
           <h2 className="accordion-header" id="headingOne">
@@ -36,11 +47,7 @@ function About(props) {
             data-bs-parent="#accordionExample"
           >
             <div className="accordion-body" style={styles.container}>
-              <strong>This is the first item's accordion body.</strong> It is
-              shown by default, until the collapse plugin adds the appropriate
-              classes that we use to style each element. These classes control
-              the overall appearance, as well as the showing and hiding via CSS
-              transitions.
+              it is a absolute free and it is not showing to unwanted advertisement.it is not ask to fill any sensitive information
             </div>
           </div>
         </div>
@@ -65,7 +72,8 @@ function About(props) {
             data-bs-parent="#accordionExample"
           >
             <div className="accordion-body">
-              Hey, I'm Tabish. I'm a web developer. You can send me feedback on my email
+              Hey, I'm Tabish. I'm a web developer. You can send me feedback on my email.
+              you can get code on github. click <a target="_blank" rel="noreferrer" href="https://github.com/Realgorithm/text-hub">here</a> to get code
             </div>
           </div>
         </div>
@@ -90,48 +98,49 @@ function About(props) {
             data-bs-parent="#accordionExample"
           >
             <div className="accordion-body" style={styles.container}>
-              <p></p>
+              <p>Hello Guys it is a easy to use web application</p>
             </div>
           </div>
         </div>
       </div>
+      {/* accordion ends here  */}
       {/* Coruosel starts here */}
-      <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <div id="carouselExampleDark" className="carousel carousel-dark slide" data-bs-ride="carousel">
+        <div className="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
           <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
           <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
-        <div class="carousel-inner">
-          <div class="carousel-item active" data-bs-interval="10000">
-            <img src="..." class="d-block w-100" alt="..." />
-            <div class="carousel-caption d-none d-md-block">
-              <h5>First slide label</h5>
-              <p>Some representative placeholder content for the first slide.</p>
+        <div className="carousel-inner">
+          <div className="carousel-item active" data-bs-interval="10000">
+            <img src={code} className="d-block w-100" alt="Code" />
+            <div className="carousel-caption d-none d-md-block">
+              <h5 style={styles.slideText}>Code Preview</h5>
+              <p style={styles.slideText}>Here is a representation of code we used to build this website</p>
             </div>
           </div>
-          <div class="carousel-item" data-bs-interval="2000">
-            <img src="..." class="d-block w-100" alt="..." />
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Second slide label</h5>
-              <p>Some representative placeholder content for the second slide.</p>
+          <div className="carousel-item" data-bs-interval="2000">
+            <img src={preview} className="d-block w-100" alt="preview" />
+            <div className="carousel-caption d-none d-md-block">
+              <h5>Webpages preview</h5>
+              <p>Some representative from this webpage itself.</p>
             </div>
           </div>
-          <div class="carousel-item">
-            <img src="..." class="d-block w-100" alt="..." />
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Third slide label</h5>
-              <p>Some representative placeholder content for the third slide.</p>
+          <div className="carousel-item">
+            <img src={usedlang} className="d-block w-100" alt="used language" />
+            <div className="carousel-caption d-none d-md-block">
+              <h5>Used Language</h5>
+              <p>Here we Used ReactJS, HTML, Bootstrap.</p>
             </div>
           </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
+        <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+          <span className="carousel-control-prev-icon" aria-hidden="true" style={styles.slideBtn}></span>
+          <span className="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
+        <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+          <span className="carousel-control-next-icon" aria-hidden="true" style={styles.slideBtn}></span>
+          <span className="visually-hidden">Next</span>
         </button>
       </div>
       {/* Coruosel ends here */}

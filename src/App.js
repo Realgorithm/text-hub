@@ -5,7 +5,8 @@ import { useState } from "react";
 import Navbar from "./components/Navbar";
 import About from "./components/About";
 import { Route, Routes } from "react-router-dom";
-// import Contact from "./components/Contact";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
 function App() {
   const [mode, setMode] = useState("light"); // setDark to true if you want to use the dark theme
@@ -51,9 +52,11 @@ function App() {
           }
         />
         <Route path="/about" element={<About mode={mode}/>} />
-        {/* <Route path="/contact" element={<Contact showAlert={showAlert}/>} /> */}
+        <Route path="/contact" element={<Contact showAlert={showAlert}/>} />
       </Routes>
+      <Footer/>
     </>
+
   );
 }
 

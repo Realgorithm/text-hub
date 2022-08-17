@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 function TextForm(props) {
   const [text, setText] = useState("");
+  const [bold, setBold] = useState("normal");
 
   const handleUpClick = () => {
     let newText = text.toUpperCase();
@@ -18,10 +19,14 @@ function TextForm(props) {
     setText(newText);
     props.showAlert("Text cleared successfully", "success");
   };
-  const handleBoldClick = () => {
-   document.getElementById("textBox").style.fontWeight = "bold";
-    
-    props.showAlert("Converted to Bold Text", "success");
+  const BoldText = () => {
+    if (bold === "normal") {
+      setBold("bold");
+      props.showAlert("Text is now bold", "success");
+    } else {
+      setBold("normal");
+      props.showAlert("Text is now normal", "success");
+    }
   };
   const handleCopyClick = () => {
     navigator.clipboard.writeText(text);
@@ -37,7 +42,7 @@ function TextForm(props) {
   };
   return (
     <>
-      <div className="container my-3">
+      <div className="container min-vh-100">
         <h2>{props.heading}</h2>
         <div className="mb-3">
           <textarea
@@ -50,6 +55,7 @@ function TextForm(props) {
             style={{
               backgroundColor: props.mode === "dark" ? "rgb(9 60 98)" : "white",
               color: props.mode === "light" ? "black" : "white",
+              fontWeight: bold,
             }}
           ></textarea>
         </div>
@@ -77,9 +83,9 @@ function TextForm(props) {
         <button
           className="btn btn-primary mx-3 my-2"
           disabled={text.length === 0}
-          onClick={handleBoldClick}
+          onClick={BoldText}
         >
-          Bold Text
+          {bold === "normal" ? "Bold Text" : "Normal Text"}
         </button>
         <button
           className="btn btn-primary my-2"
@@ -95,31 +101,32 @@ function TextForm(props) {
         >
           Remove Extra Spaces
         </button>
+        <div className="container my-3">
+          <h2>Your Text Summary</h2>
+          <p>
+            {
+              text.split(/\s+/).filter((element) => {
+                return element.length !== 0;
+              }).length
+            }{" "}
+            words and {text.length} characters
+          </p>
+          <p>
+            {0.005 *
+              text.split(/\s+/).filter((element) => {
+                return element.length !== 0;
+              }).length}{" "}
+            minutes take to read whole content
+          </p>
+          <h3>Preview</h3>
+          <p className="overflow-auto border border-primary" >
+            {text.length > 0
+              ? text
+              : "Enter something in the textbox above to preview your content"}
+          </p>
+        </div>
       </div>
-      <div className="container my-3">
-        <h2>Your Text Summary</h2>
-        <p>
-          {
-            text.split(/\s+/).filter((element) => {
-              return element.length !== 0;
-            }).length
-          }{" "}
-          words and {text.length} characters
-        </p>
-        <p>
-          {0.005 *
-            text.split(/\s+/).filter((element) => {
-              return element.length !== 0;
-            }).length}{" "}
-          minutes take to read whole content
-        </p>
-        <h3>Preview</h3>
-        <p className="border border-primary border-2">
-          {text.length > 0
-            ? text
-            : "Enter something in the textbox above to preview your content"}
-        </p>
-      </div>
+
     </>
   );
 }
