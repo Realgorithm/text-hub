@@ -1,12 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import logo from "../asset/icon/favicon-32x32.png";
 
 function Navbar(props) {
+
   return (
     <nav
-      className={`navbar navbar-expand-lg sticky-top navbar-${props.mode} bg-${props.mode}`}
+      className={`navbar navbar-expand-lg sticky-top navbar-${props.mode} bg-${props.mode}`} style={{fontWeight: "600"}}
     >
       <div className="container-fluid">
+        <img src={logo} alt="logo" className="mx-2" />
         <Link className="navbar-brand" to="/">
           Text Hub
         </Link>
@@ -22,7 +25,7 @@ function Navbar(props) {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav me-auto mb-4 mb-lg-0">
+          <ul className="navbar-nav me-auto mb-4 mb-lg-0 ">
             <li className="nav-item">
               <Link className="nav-link" aria-current="page" to="/">
                 Home
@@ -59,7 +62,7 @@ function Navbar(props) {
         </div>
       </div>
     </nav>
-  );
+  )
 }
 
 export default Navbar;

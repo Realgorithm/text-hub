@@ -2,7 +2,7 @@ import React from 'react';
 function Footer() {
     return (
         <>
-            <div className='d-flex flex-column '>
+            <div className='d-flex flex-column'>
                 <footer className="bg-dark text-center text-white mt-auto">
 
                     <div className="container p-4 pb-0">
