@@ -2,6 +2,7 @@
 /*
  *  CONFIGURE EVERYTHING HERE
  */
+header('Access-Control-Allow-Origin: http://localhost:3000');
 
 // an email address that will be in the From field of the email.
 $from = 'Demo contact form <demo@domain.com>';
@@ -46,7 +47,7 @@ try
     // All the necessary headers for the email.
     $headers = array('Content-Type: text/plain; charset="UTF-8";',
         'From: ' . $from,
-        'Reply-To: ' . $_POST['email'],
+        'Reply-To: ' . $_POST['hussaintabish0618@gmail.com'],
         'Return-Path: ' . $from,
     );
     

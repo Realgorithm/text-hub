@@ -1,10 +1,45 @@
-import React from 'react'
+import React, { useRef } from 'react'
+import emailjs from '@emailjs/browser';
 
-function Contact() {
+function Contact(props) {
+// const [name, setName] = useState("");
+// const [result, setResult] = useState("");
+
+// const handleChange = (e) => {
+//     setName(e.target.value);
+// }
+// const handleSubmit=(e)=>{
+//     e.preventDefault();
+//     const form = $(e.target);
+//     $.ajax({
+//         type: "POST",
+//         url: form.attr("action"),
+//         data: form.serialize(),
+//         success(data){
+//             setResult(data);
+//         },
+//     });
+// };
+
+const form = useRef();
+
+const sendEmail = (e) => {
+  e.preventDefault();
+
+  emailjs.sendForm('service_q2bg4vi', 'template_o9404ue', form.current, 'aoSj-k8t7q634C7za')
+    .then((result) => {
+        console.log(result.text);
+        props.showAlert("Thanks for your feedback","success");
+    }, (error) => {
+        console.log(error.text);
+        props.showAlert("Some error occur","danger");
+    });
+};
+
     return (
         <div className='container min-vh-100'>
             <h1>Contact Us</h1>
-            <form id="contact-form" method="">
+            <form id="contact-form" ref={form} onSubmit={sendEmail}>
 
                 <div className="messages"></div>
                 <div className="controls">
@@ -60,12 +95,12 @@ function Contact() {
                         </div>
                     </div>
                     {/* <div className="row">
-        <div className="col-md-12">
-            <p className="text-muted">
-                <strong>*</strong> These fields are required. Contact form template by
-                <a href="https://bootstrapious.com/p/how-to-build-a-working-bootstrap-contact-form" target="_blank" rel='noreferrer'>Bootstrapious</a>.</p>
-        </div>
-    </div> */}
+                        <div className="col-md-12">
+                            <p className="text-muted">
+                                <strong>*</strong> These fields are required. Contact form template by
+                                <a href="https://bootstrapious.com/p/how-to-build-a-working-bootstrap-contact-form" target="_blank" rel='noreferrer'>Bootstrapious</a>.</p>
+                        </div>
+                    </div> */}
                 </div>
             </form>
         </div>
