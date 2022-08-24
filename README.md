@@ -14,7 +14,7 @@ Access my site at [texthub.web.app](https://texthub-20914.web.app)
 - [License](#license)
 
 ## About The App
-[Text-Hub] is an app that allows you to create and share your own text-based art.
+[Text-Hub] is an app that allows you to utilize your text.  
 
 ## Screenshots
 ![preview](https://user-images.githubusercontent.com/107784329/186419038-d7224462-ef6a-4ffd-8ba0-a5979711f1a3.png)
@@ -28,7 +28,7 @@ I used `html`, `css`, `reactjs` ...
 ## Setup
 - download or clone the repository
 - run `npm install`
-- npm start
+- run `npm start`
 - open the browser and go to `localhost:3000`
 - you can see the app in action
 - you can create your own art
