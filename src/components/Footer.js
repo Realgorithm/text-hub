@@ -9,31 +9,24 @@ function Footer() {
 
                         <section className="mb-4">
 
-                            <a className="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com" role="button"
+                            <a className="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com/tabish.hussain.5686322" target="_blank" rel="noreferrer" role="button"
                             ><i className='fa fa-facebook'></i></a>
 
+                            <a className="btn btn-outline-light btn-floating m-1" href="https://twitter.com/TabishH01492059" target="_blank" rel="noreferrer" role="button"
+                            ><i className="fa fa-twitter"></i></a>
 
-                            <a className="btn btn-outline-light btn-floating m-1" href="https://twitter.com" role="button"
-                            ><i className="fa fa-twitter"></i
-                            ></a>
+                            <a className="btn btn-outline-light btn-floating m-1" href="https://www.snapchat.com/add/tabish-22?share_id=pIT-u0PShVk&locale=en-IN" target="_blank" rel="noreferrer" role="button"><i className="fa fa-snapchat"></i></a>
 
-
-                            <a className="btn btn-outline-light btn-floating m-1" href="https://www.google.com" role="button"
-                            ><i className="fa fa-google"></i
-                            ></a>
-
-
-                            <a className="btn btn-outline-light btn-floating m-1" href="https://instagram,com" role="button"
+                            <a className="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/tabish_hussain09/" target="_blank" rel="noreferrer" role="button"
                             ><i className="fa fa-instagram"></i
                             ></a>
-
-
-                            <a className="btn btn-outline-light btn-floating m-1" href="https://www.linkedin.com" role="button"
+                            
+                            <a className="btn btn-outline-light btn-floating m-1" href="https://www.linkedin.com" target="_blank" rel="noreferrer" role="button"
                             ><i className="fa fa-linkedin"></i
                             ></a>
 
 
-                            <a className="btn btn-outline-light btn-floating m-1" href="https://www.github.com" role="button"
+                            <a className="btn btn-outline-light btn-floating m-1" href="https://www.github.com/Realgorithm" target="_blank" rel="noreferrer" role="button"
                             ><i className="fa fa-github"></i
                             ></a>
                         </section>
